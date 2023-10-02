@@ -1,5 +1,7 @@
 package learning.java;
 
+import java.util.Objects;
+
 /*
  ****************************
  *  Implement a Calculator class.
@@ -62,5 +64,25 @@ public class Calculator {
     // and sets the state of the calculator to zero (0)
     public void reset() {
         value = 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Calculator that = (Calculator) o;
+        return Double.compare(value, that.value) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+    @Override
+    public String toString() {
+        return "Calculator{" +
+                "value=" + value +
+                '}';
     }
 }
