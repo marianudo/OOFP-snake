@@ -46,7 +46,7 @@ public class CalculatorTest {
     @Test void testCombinedOperations() {
         calculator.sum(12);
         calculator.minus(3);
-        calculator.sqrt();;
+        calculator.sqrt();
         calculator.times(2);
         calculator.dividedBy(3);
         assertEquals(2, calculator.getValue());
