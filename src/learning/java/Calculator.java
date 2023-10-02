@@ -17,6 +17,7 @@ import java.util.Objects;
  *  - Square root. Same
  *  It will also provide a method to query the accumulated result of all calculations performed
  *  It will provide another method to reset to state of the object to zero (0)
+ ******************************
  */
 // New assignment for the weekend (or if too daunting, to review in class next week)
 // Implement
@@ -27,6 +28,12 @@ public class Calculator {
     // As we want to be able to modify this state with each method call,
     // we cannot (and shouldn't) make it final.
     private double value = 0;
+
+    // TODO Assignment - Enable creating a Calculator object with a give state
+    // For that, create a public constructor that takes a double as a parameter
+    // and assigns it to the Calculator instance value
+    // In order to keep the rest of the code compiling, a default constructor
+    // (with no parameters) will be needed.
 
     // Create a method to add an arbitrary decimal number to the state of the Calculator
     // Name it sum, declare a return type of 'void', and make it public

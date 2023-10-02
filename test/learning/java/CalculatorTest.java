@@ -8,43 +8,53 @@ import org.junit.jupiter.api.Test;
 // previously implemented ourselves.
 public class CalculatorTest {
     private final Calculator calculator = new Calculator();
+
+    private void initCalculatorWithValue(double value) {
+        // TODO Replace this implementation with a call to the new constructor that takes a value as initial state
+        calculator.reset();
+        calculator.sum(value);
+    }
+
     @Test void testSum() {
         // Create a Calculator object and test that the sum method works as expected
-        calculator.sum(5);
-        assertEquals(5, calculator.getValue());
+        initCalculatorWithValue(5);
+        calculator.sum(3);
+        assertEquals(8, calculator.getValue());
     }
 
     @Test void testMinus() {
+        initCalculatorWithValue(0);
         calculator.minus(3);
         assertEquals(-3, calculator.getValue());
     }
 
     @Test void testTimes() {
-        calculator.sum(2);
+        initCalculatorWithValue(2);
         calculator.times(3);
         assertEquals(6, calculator.getValue());
     }
 
     @Test void testDividedBy() {
-        calculator.sum(4);
+        initCalculatorWithValue(4);
         calculator.dividedBy(2);
         assertEquals(2, calculator.getValue());
     }
 
     @Test void testSquareRoot() {
-        calculator.sum(9);
+        initCalculatorWithValue(9);
         calculator.sqrt();
         assertEquals(3, calculator.getValue());
     }
 
     @Test void testReset() {
-        calculator.sum(19);
+        initCalculatorWithValue(19);
         calculator.reset();
         assertEquals(0, calculator.getValue());
     }
 
     @Test void testCombinedOperations() {
-        calculator.sum(12);
+        initCalculatorWithValue(10);
+        calculator.sum(2);
         calculator.minus(3);
         calculator.sqrt();
         calculator.times(2);
