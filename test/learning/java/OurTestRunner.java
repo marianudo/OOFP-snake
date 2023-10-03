@@ -7,8 +7,8 @@ public class OurTestRunner {
         // TODO Note for the instructor:
         // Show here what happens when we deal with mutable state in concurrent environments
         // Use for that the CalculatorTest
-        Calculator calc1 = new Calculator();
-        Calculator calc2 = new Calculator();
+        JavaStatefulCalculator calc1 = new JavaStatefulCalculator();
+        JavaStatefulCalculator calc2 = new JavaStatefulCalculator();
         runThreadThatComputes3(calc1);
         runThreadThatComputes5(calc2);
         // Wait for the threads to complete calculations
@@ -17,16 +17,16 @@ public class OurTestRunner {
         assertEquals(5, calc2.getValue(), 0.001);
     }
 
-    private static void runThreadThatComputes3(Calculator c) {
+    private static void runThreadThatComputes3(JavaStatefulCalculator c) {
         new Thread(() -> calculationsThatReturn3(c), "ThreadReturning3").start();
     }
 
-    private static void runThreadThatComputes5(Calculator c) {
+    private static void runThreadThatComputes5(JavaStatefulCalculator c) {
         new Thread(() -> calculationsThatReturn5(c), "ThreadReturning5").start();
     }
 
     // Will return 3.0 in the Calculator state
-    private static void calculationsThatReturn3(Calculator c) {
+    private static void calculationsThatReturn3(JavaStatefulCalculator c) {
         c.sum(3);
         c.times(2);
         c.dividedBy(0.5);
@@ -35,7 +35,7 @@ public class OurTestRunner {
     }
 
     //Returns 5.0 in the calculator state
-    private static void calculationsThatReturn5(Calculator c) {
+    private static void calculationsThatReturn5(JavaStatefulCalculator c) {
         c.sum(5);
         c.times(2);
         c.dividedBy(0.5);

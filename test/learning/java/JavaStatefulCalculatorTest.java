@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 // Implement a test class that validates the correctness of the Calculator class logic
 // This exercise is intended to practice writing code to use objects of classes we have
 // previously implemented ourselves.
-public class JavaCalculatorTest {
-    private final Calculator calculator = new Calculator();
+public class JavaStatefulCalculatorTest {
+    private final JavaStatefulCalculator calculator = new JavaStatefulCalculator();
 
     private void initCalculatorWithValue(double value) {
         // TODO Replace this implementation with a call to the new constructor that takes a value as initial state

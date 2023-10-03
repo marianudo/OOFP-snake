@@ -21,7 +21,7 @@ import java.util.Objects;
  */
 // New assignment for the weekend (or if too daunting, to review in class next week)
 // Implement
-public class Calculator {
+public class JavaStatefulCalculator {
     // Declare here a private attribute of type double to accumulate the result.
     // Remember that its initial state should be zero,
     // and the caller shouldn't be able to establish that initial state.
@@ -77,7 +77,7 @@ public class Calculator {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Calculator that = (Calculator) o;
+        JavaStatefulCalculator that = (JavaStatefulCalculator) o;
         return Double.compare(value, that.value) == 0;
     }
 
