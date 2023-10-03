@@ -8,11 +8,13 @@ public class OurTestRunner {
         // Show here what happens when we deal with mutable state in concurrent environments
         // Use for that the CalculatorTest
         Calculator calc1 = new Calculator();
+        Calculator calc2 = new Calculator();
         runThreadThatComputes3(calc1);
-        runThreadThatComputes5(calc1);
+        runThreadThatComputes5(calc2);
         // Wait for the threads to complete calculations
         Thread.sleep(1000L);
         assertEquals(3, calc1.getValue(), 0.001);
+        assertEquals(5, calc2.getValue(), 0.001);
     }
 
     private static void runThreadThatComputes3(Calculator c) {
