@@ -1,9 +1,14 @@
 package learning.java;
 
-public class Shape {
+public abstract class Shape {
+
+    protected final static String defaultColor = "Transparent";
     private final String color;
     private final int numberOfSides;
 
+    public Shape() {
+        this(defaultColor);
+    }
     public Shape(String c) {
         this(c, 0);
         //System.out.println("CAlled the 1 parameter constructor");
@@ -12,7 +17,7 @@ public class Shape {
     public Shape(String c, int n) {
         color = c;
         numberOfSides = n;
-        //System.out.println("CAlled the 2 parameters constructor");
+        System.out.println("Called the 2 parameters constructor");
     }
 
     public String toString() {
@@ -27,10 +32,12 @@ public class Shape {
         return numberOfSides;
     }
 
-    public Shape copy(Shape anotherShape) {
-        return new Shape(anotherShape.getColor(), anotherShape.getNumberOfSides());
+    public abstract void draw();
+
+    public static Shape shapeFactory() {
+        return new Square(3);
     }
 
-
+    public abstract void perimeter();
 }
 

@@ -24,7 +24,7 @@ public class JavaStatelessCalculator {
     }
 
     // TODO To be implemented by student
-    public JavaStatelessCalculator divideBy(double v) {
+    public JavaStatelessCalculator dividedBy(double v) {
         return null;
     }
 

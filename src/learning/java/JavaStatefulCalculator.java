@@ -29,7 +29,7 @@ public class JavaStatefulCalculator {
     // we cannot (and shouldn't) make it final.
     private double value = 0;
 
-    // TODO Assignment - Enable creating a Calculator object with a give state
+    // Enable creating a Calculator object with a give state
     // For that, create a public constructor that takes a double as a parameter
     // and assigns it to the Calculator instance value
     // In order to keep the rest of the code compiling, a default constructor

@@ -9,7 +9,7 @@ package learning.java;
 // 3. Provide a getter for the side length Triangle class attribute
 // 4. Implement a perimeter method that returns the perimeter of the Triangle object.
 // 5. Provide a toString method that returns a textual representation of the state of the Triangle instance
-public class Triangle {
+public class Triangle extends Shape {
     // 1. First, we make the state of our Triangle immutable
     private final int sideLength;
 
@@ -35,5 +35,9 @@ public class Triangle {
     // 5. Finally, the toString method
     public String toString() {
         return "Triangle(sideLength=" + sideLength + ")";
+    }
+
+    public void draw() {
+        System.out.println("I'm a triangle with a side of length " + sideLength);
     }
 }
